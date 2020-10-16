@@ -30,7 +30,13 @@ code {
 
 .flex { display: flex; }
 
-section {
+.section-title {
+  padding: 50px 20px;
+  text-align: center;
+  font-size: 30px;
+}
+
+section:not(.normal-height) {
   min-height: 100vh;
 }
 
