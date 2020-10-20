@@ -15,27 +15,33 @@ function AboutUs() {
     const aboutUsList = [
         {
             image: <img src={acreditamosNoNovo} alt="acreditamosNoNovo"></img>,
-            title: 'acreditamosNoNovo',
+            title: 'acreditamos No Novo',
+            text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque culpa temporibus aut perspiciatis repellat sit accusamus quam officia adipisci! Aspernatur tempore corporis asperiores veritatis provident possimus sint inventore. Debitis, voluptates!',
         },
         {
             image: <img src={focamosNasPessoas} alt="focamosNasPessoas"></img>,
-            title: 'focamosNasPessoas',
+            title: 'focamos Nas Pessoas',
+            text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque culpa temporibus aut perspiciatis repellat sit accusamus quam officia adipisci! Aspernatur tempore corporis asperiores veritatis provident possimus sint inventore. Debitis, voluptates!',
         },
         {
             image: <img src={formamosUmTime} alt="formamosUmTime"></img>,
-            title: 'formamosUmTime',
+            title: 'formamos Um Time',
+            text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque culpa temporibus aut perspiciatis repellat sit accusamus quam officia adipisci! Aspernatur tempore corporis asperiores veritatis provident possimus sint inventore. Debitis, voluptates!',
         },
         {
             image: <img src={pensamosSimples} alt="pensamosSimples"></img>,
-            title: 'pensamosSimples',
+            title: 'pensamos Simples',
+            text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque culpa temporibus aut perspiciatis repellat sit accusamus quam officia adipisci! Aspernatur tempore corporis asperiores veritatis provident possimus sint inventore. Debitis, voluptates!',
         },
         {
             image: <img src={prezamosPelaAparencia} alt="prezamosPelaAparencia"></img>,
-            title: 'prezamosPelaAparencia',
+            title: 'prezamos Pela Aparencia',
+            text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque culpa temporibus aut perspiciatis repellat sit accusamus quam officia adipisci! Aspernatur tempore corporis asperiores veritatis provident possimus sint inventore. Debitis, voluptates!',
         },
         {
             image: <img src={somosInconformados} alt="somosInconformados"></img>,
-            title: 'somosInconformados',
+            title: 'somos Inconformados',
+            text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque culpa temporibus aut perspiciatis repellat sit accusamus quam officia adipisci! Aspernatur tempore corporis asperiores veritatis provident possimus sint inventore. Debitis, voluptates!',
         },
     ];
 

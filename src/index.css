@@ -36,6 +36,13 @@ code {
   font-size: 30px;
 }
 
+section {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 section:not(.normal-height) {
   min-height: 100vh;
 }

@@ -1,0 +1,40 @@
+.card-wrap {
+    flex-wrap: wrap;
+    .card {
+        background-color: #f5f5f5;
+        border-radius: 6px;
+        margin: 10px;
+        justify-content: center; // alinha horizontalmente
+        align-items: center; // alinha verticalmente
+        // se o display-flex for column, ai vai ser invertido
+        flex: 0 1 calc(100% - 32px);
+        overflow: hidden;
+        padding: 16px;
+
+        img {
+            padding: 25px;
+            width: 250px;
+        }
+
+        h3 {
+            font-size: 28px;
+            padding: 16px 8px;
+            color: #212121;
+            font-weight: 600;
+        }
+
+        p {
+            font-weight: 300;
+            font-size: 16px;
+            padding: 0 16px 16px 0;
+        }
+    }
+}
+
+@media screen and (min-width: 1320px) {
+    .card-wrap {
+        .card {
+            flex: 0 1 calc(50% - 32px);
+        }
+    }
+}
