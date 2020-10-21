@@ -2,6 +2,8 @@ import React from 'react';
 import './style.scss';
 
 import Character from '../../assets/home/character-home.svg';
+import Icon from '@mdi/react';
+import { mdiHome } from '@mdi/js';
 
 function Home() {
     return (

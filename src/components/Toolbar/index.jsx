@@ -4,8 +4,13 @@ import './style.scss';
 import { Link } from 'react-router-dom';
 import Logo from '../../assets/logo.png';
 
+import Icon from '@mdi/react';
+import { mdiMenu, mdiClose } from '@mdi/js';
+import Navbar from '../Navbar';
+
 function Toolbar () {
   const [menuOptions, setMenuOptions] = useState([]);
+  const [openMenu, setOpenMenu] = useState(false);
 
   useEffect(() => {
     if(!menuOptions.length) {
@@ -24,10 +29,19 @@ function Toolbar () {
   return (
     <div className="header">
       <div className="container flex">
-        <Link to="/" className="logo flex">
+        <button className={`${openMenu && 'active'}`} onClick={() => {
+          setOpenMenu(!openMenu);
+        }}>
+          <Icon path={openMenu ? mdiClose: mdiMenu} size={1} />
+        </button> 
+
+        <Link to="/" className={`logo flex ${openMenu && 'left-large'}`}>
           <img src={ Logo } alt="Logotipo" height="50px"/>
         </Link>
-        <nav>
+
+        <Navbar opened={openMenu} menuOptions={menuOptions}/>
+
+        {/* <nav>
           <ul>
             {
               menuOptions.map((key) => (
@@ -37,7 +51,7 @@ function Toolbar () {
               ))
             }
           </ul>
-        </nav>
+        </nav> */}
       </div>
     </div>
   )

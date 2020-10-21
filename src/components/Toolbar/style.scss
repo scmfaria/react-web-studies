@@ -9,40 +9,39 @@
     .container {
         width: 100%;
         align-items: center;
+        button {
+            visibility: hidden;
+            width: 46px;
+            height: 46px;
+            border-radius: 50px;
+            transition: background 250ms ease-in-out;
+            z-index: 1;
+            outline: none;
+            margin-left: -16px;
+            &.active {
+              background: #ffc700;
+            }
+          }
 
         .logo {
-            align-items: center;
-            justify-content: center;
-        }
-
-        nav {
-            margin-left: auto;
-        }
-
-        ul {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 0;
-            li {
-                &:not(.spotlight)
-                a {
-                    padding: 8px 16px;
-                    color: #212121;
-                }
+            &.left-large {
+                margin-left: 264px;
             }
+            transition: 250ms ease-in-out;
+            margin-left: 16px;
+            align-items: center;
+            justify-content: center;
         }
     }
 }
 
-.spotlight {
-    a {
-        width: 100%;
-        height: 100%;
-        padding: 8px 24px;
-        color: #f5f5f5;
-        background-color: #212121;
-        border-radius: 10px;
+@media screen and (max-width: 720px) {
+    .header {
+        .container {
+            button {
+                visibility: visible;
+            }
+        }
     }
 }
 
