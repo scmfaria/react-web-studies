@@ -27,31 +27,26 @@ function Toolbar () {
   }, [menuOptions])
 
   return (
-    <div className="header">
+    <div className={`header ${'boxActive'}`}>
       <div className="container flex">
         <button className={`${openMenu && 'active'}`} onClick={() => {
           setOpenMenu(!openMenu);
         }}>
           <Icon path={openMenu ? mdiClose: mdiMenu} size={1} />
         </button> 
-
+        {
+          openMenu && (
+            <p className="titleMenu">
+              Hello, world!
+            </p>
+          )
+        }
+      
         <Link to="/" className={`logo flex ${openMenu && 'left-large'}`}>
           <img src={ Logo } alt="Logotipo" height="50px"/>
         </Link>
 
         <Navbar opened={openMenu} menuOptions={menuOptions}/>
-
-        {/* <nav>
-          <ul>
-            {
-              menuOptions.map((key) => (
-                <li className={`${key?.isBlack && 'spotlight'}`} key={`menuOption=${ key.link }`}>
-                  <Link to={key.link}> { key.name } </Link>
-                </li>
-              ))
-            }
-          </ul>
-        </nav> */}
       </div>
     </div>
   )
