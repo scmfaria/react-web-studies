@@ -1,0 +1,65 @@
+// Variables
+$primaryColor: #2196F3;
+
+.input-content {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	.input-wrap {
+		flex: 1;
+		input {
+			width: 100%;
+			min-width: 400px;
+		}
+	}
+}
+
+// Inputs 
+.input-wrap {
+	padding: 16px;
+	position: relative;
+	display: flex;
+    align-items: center;
+
+    &.has-icon {
+        .icon {
+            color: #e91e63;
+            position: absolute;
+            left: 24px;
+            top: 31px;
+        }
+        input {
+            padding-left: 30px;
+            &[type="text"] + label {
+                left: 50px;
+            }
+        }
+    }
+    
+	&.active input[type="text"] + label,
+    input[type="text"]:focus + label {
+        top: 8px;
+        left: 24px;
+        padding: 2px 4px;
+        background-color: #fff;
+        font-size: 12px;
+        font-weight: 500;
+    }
+	input {
+		border: 2px solid $primaryColor;
+        padding: 16px;
+		border-radius: 7px;
+		outline: none;
+		&:focus {
+			box-shadow: 1px 1px 4px rgba(33, 150, 243, 0.4);
+        }
+        &[type="text"] + label {
+            transition: 150ms ease;
+            position: absolute;
+            top: 32px;
+            left: 36px;
+            color: $primaryColor;
+        }
+	}
+}
