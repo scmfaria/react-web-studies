@@ -8,7 +8,7 @@ $primaryColor: #2196F3;
 	flex-wrap: wrap;
 	.input-wrap {
 		flex: 1;
-		input {
+		input, select {
 			width: 100%;
 			min-width: 400px;
 		}
@@ -29,16 +29,17 @@ $primaryColor: #2196F3;
             left: 24px;
             top: 31px;
         }
-        input {
+        input, select {
             padding-left: 30px;
-            &[type="text"] + label {
-                left: 50px;
-            }
+        }
+        select + label, 
+        input[type="text"] + label {
+            left: 50px;
         }
     }
     
-	&.active input[type="text"] + label,
-    input[type="text"]:focus + label {
+    &.active input[type="text"] + label, input[type="text"]:focus + label,
+	&.active select + label, select:focus + label {
         top: 8px;
         left: 24px;
         padding: 2px 4px;
@@ -46,7 +47,7 @@ $primaryColor: #2196F3;
         font-size: 12px;
         font-weight: 500;
     }
-	input {
+    select, input {
 		border: 2px solid $primaryColor;
         padding: 16px;
 		border-radius: 7px;
@@ -54,12 +55,14 @@ $primaryColor: #2196F3;
 		&:focus {
 			box-shadow: 1px 1px 4px rgba(33, 150, 243, 0.4);
         }
-        &[type="text"] + label {
-            transition: 150ms ease;
-            position: absolute;
-            top: 32px;
-            left: 36px;
-            color: $primaryColor;
-        }
-	}
+    }
+    
+    select + label,
+    input[type="text"] + label {
+        transition: 150ms ease;
+        position: absolute;
+        top: 32px;
+        left: 36px;
+        color: $primaryColor;
+    }
 }

@@ -7,6 +7,8 @@ import { mdiHeart } from '@mdi/js';
 function Form() {
     const [text, setText] = useState('');
     const [textIcon, setTextIcon] = useState('');
+    const [select, setSelect] = useState('0');
+    const [select02, setSelect02] = useState('');
 
     return(
         <section>
@@ -43,7 +45,43 @@ function Form() {
                 </div>
             </div>      
 
-			<div className="input-wrap">
+            <div className="input-content">
+                <div className={`input-wrap ${select && 'active'}`}>
+                    <select 
+                        name="select" 
+                        id="select" 
+                        onChange={
+                            (event) => { 
+                                setSelect(event.target.value)
+                            }
+                        }>
+                        <option value="0">Selecione</option>
+                        <option value="1">Option 01</option>
+                        <option value="2">Option 02</option>
+                        <option value="3">Option 03</option>
+                    </select>
+                    <label htmlFor="select">Select!</label>
+                </div>
+
+                <div className={`input-wrap ${select02 && 'active'}`}>
+                    <select 
+                        name="select02" 
+                        id="select02" 
+                        onChange={
+                            (event) => { 
+                                setSelect02(event.target.value)
+                            }
+                        }>
+                        <option value=""></option>
+                        <option value="1">Option 01</option>
+                        <option value="2">Option 02</option>
+                        <option value="3">Option 03</option>
+                    </select>
+                    <label htmlFor="select02">Select!</label>
+                </div>
+            </div>
+
+            <div className="input-wrap">
 				<input id="radio" type="radio"/>
 				<label htmlFor="radio">Input Radio!</label>
 			</div>
@@ -51,16 +89,6 @@ function Form() {
 			<div className="input-wrap">
 				<input id="check" type="checkbox"/>
 				<label htmlFor="check">Input Checkbox!</label>
-			</div>
-
-			<div className="input-wrap">
-				<select name="select" id="select">
-					<option value="">Selecione</option>
-					<option value="1">Option 01</option>
-					<option value="2">Option 02</option>
-					<option value="3">Option 03</option>
-				</select>
-				<label htmlFor="select">Select!</label>
 			</div>
 
 		</section>

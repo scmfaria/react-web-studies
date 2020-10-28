@@ -5,20 +5,30 @@
   margin: 0;
   padding: 0;
   border: 0;
+  font-family: 'Montserrat', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+select {
+  color: #222222
+  option {
+    color: #2196f3;
+  }
 }
 
 html {
   font-size: 14px;
 
   body {
-    font-family: 'Montserrat', sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-
     .container {
       padding: 8px 32px;
       max-width: 1600px;
       margin: 0 auto;
+    }
+
+    select, input {
+      background-color: #fff;
     }
     
     .flex { display: flex; }
