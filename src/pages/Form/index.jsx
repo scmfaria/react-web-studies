@@ -82,9 +82,22 @@ function Form() {
             </div>
 
             <div className="input-wrap">
-				<input id="radio" type="radio"/>
-				<label htmlFor="radio">Input Radio!</label>
-			</div>
+                <div className="radio-item">
+                    <input name="radio" id="radio" type="radio"/>
+                    <div className="ghost-radio"></div>
+                    <label htmlFor="radio">Input Radio 1!</label>
+                </div>
+                <div className="radio-item">
+                    <input name="radio" id="radio1" type="radio"/>
+                    <div className="ghost-radio"></div>
+                    <label htmlFor="radio1">Input Radio 2!</label>
+                </div>
+                <div className="radio-item">
+                    <input name="radio" id="radio2" type="radio"/>
+                    <div className="ghost-radio"></div>
+                    <label htmlFor="radio2">Input Radio 3!</label>
+                </div>
+            </div>
 
 			<div className="input-wrap">
 				<input id="check" type="checkbox"/>
