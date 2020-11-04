@@ -100,8 +100,21 @@ function Form() {
             </div>
 
 			<div className="input-wrap">
-				<input id="check" type="checkbox"/>
-				<label htmlFor="check">Input Checkbox!</label>
+                <div className="check-item">
+                    <input id="check" type="checkbox"/>
+                    <div className="ghost-check"></div>
+                    <label htmlFor="check">Input Checkbox 1!</label>
+                </div>
+                <div className="check-item">
+                    <input id="check2" type="checkbox"/>
+                    <div className="ghost-check"></div>
+                    <label htmlFor="check2">Input Checkbox 2!</label>
+                </div>
+                <div className="check-item">
+                    <input id="check3" type="checkbox"/>
+                    <div className="ghost-check"></div>
+                    <label htmlFor="check3">Input Checkbox 3!</label>
+                </div>
 			</div>
 
 		</section>

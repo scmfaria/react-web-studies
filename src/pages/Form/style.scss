@@ -68,51 +68,71 @@ $selectionRadio: #63b9fd;
     }
 }
 
-// Radio
+// radio - checkbox
+input[type="checkbox"], label,
+input[type="radio"], label {
+    cursor: pointer;
+}
 .input-wrap {
-    .radio-item {
+    .radio-item, .check-item {
         margin: 16px;
         display: flex;
         align-items: center;
         position: relative;
-        input[type="radio"], label {
-            cursor: pointer;
-        }
-        input[type="radio"] {
+        input[type="radio"],
+        input[type="checkbox"] {
             width: 18px;
             height: 18px;
             position: absolute;
             z-index: 1;
+            opacity: 0;
+            &:checked ~ .ghost-radio,
+            &:checked ~ .ghost-check {
+                border: 2px solid $primaryColor;
+            }
+            &:checked ~ label {
+                font-weight: 500;
+            }
+        }
+    }
+}
+
+.ghost-radio, .ghost-check {
+    position: relative;
+    width: 16px;
+    height: 16px;
+    min-width: 16px;
+    min-height: 16px;
+    background: #f5f5f5;
+    margin-right: 8px;
+    transition: 300ms cubic-bezier(0.88, 0.01, 0.05, 1.01);
+    &::after {
+        content: '';
+        position: absolute;
+        background-color: $selectionRadio;
+    }
+}
+
+// Radio
+.input-wrap {
+    .radio-item {
+        input[type="radio"] {
             &:checked ~ .ghost-radio {
-                border: 1.5px solid $primaryColor;
                 &::after {
                     width: 10px;
                     height: 10px;
                 }
             }
-            &:checked ~ label {
-                font-weight: 500;
-            }
-            opacity: 0;
         }
     }
 
     .ghost-radio {
-        position: relative;
-        background: #f5f5f5;
-        width: 16px;
-        height: 16px;
         border-radius: 100px;
-        border: 1px solid $primaryColor; // solid é a forma como a borda vai ser desenhada
-        transition: 300ms cubic-bezier(0.88, 0.01, 0.05, 1.01);
-        margin-right: 8px;
+        border: 2px solid $primaryColor; // solid é a forma como a borda vai ser desenhada
         &::after {
-            content: '';
-            position: absolute;
             width: 0;
             height: 0;
             transition: 300ms cubic-bezier(0.88, 0.01, 0.05, 1.01);
-            background-color: $selectionRadio;
             border-radius: 100px;
             left: 50%;
             top: 50%;
@@ -120,6 +140,55 @@ $selectionRadio: #63b9fd;
         }
     }
 }
+
+// Checkbox
+.input-wrap {
+    .check-item {
+      input[type="checkbox"] {
+        &:checked ~ .ghost-check {
+          &::after, &::before {
+            transition:  150ms cubic-bezier(0.6, -0.12, 0.35, 1.22);
+          }
+          &::after {
+            height: 10px;
+            transition-delay: 150ms;
+            visibility: visible;
+            bottom: 1px;
+            right: 3px;
+          }
+          &::before {
+            width: 6px; 
+          }
+        }
+      }
+    }
+    .ghost-check {
+      border: 2px solid #cacaca;
+      border-radius: 4px;
+      &::after, &::before {
+        border-radius: 2px;
+      }
+      &::after {
+        width: 2px;
+        height: 2px;
+        transform: rotate(38deg); 
+        visibility: hidden;
+        bottom: 1.5px;
+        right: 6px;
+      }
+      &::before {
+        content: '';
+        position: absolute;
+        background-color: $selectionRadio;
+        width: 0;
+        height: 2px;
+        transform: rotate(37deg);
+        top: 7.3px;
+        left: 0.5px;
+      }
+    }
+}
+
 
 //pseudo-classes: usadas para estilizar um elemento com base em seu estado
 //ex: &:checked 
